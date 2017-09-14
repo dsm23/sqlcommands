@@ -153,8 +153,8 @@ SELECT FirstName, Salary FROM employees
 WHERE  Salary > 3100
 ORDER BY Salary ASC;
 ```
-The *DESC* keyword sorts results in descending order. 
-Similarly, *ASC* sorts the results in ascending order.
+The **DESC** keyword sorts results in descending order. 
+Similarly, **ASC** sorts the results in ascending order.
 
 example
 ```sql
