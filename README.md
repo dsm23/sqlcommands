@@ -4,7 +4,12 @@
 
 ## Contents
 
+1. *[Queries](#queries)*
+1.1 *[WHERE](#where)*
+
 ## Queries
+
+#### WHERE
 
 WHERE command syntax
 ```sql
