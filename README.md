@@ -5,6 +5,7 @@
 ## Contents
 
 1. *[Queries](#queries)*
+
 1.1 *[WHERE](#where)*
 
 ## Queries
@@ -48,7 +49,12 @@ WHERE City = 'New York';
 
 | Operator  | Description |
 | ------------- | ------------- |
-| AND  | Content Cell  |
-| OR  | Content Cell  |
-| IN  | Content Cell  |
-| NOT  | Content Cell  |
+| AND  | TRUE if *both* expressions are TRUE |
+| OR  | TRUE if *either* expression is TRUE  |
+| IN  | TRUE if the operand is equal to one of a list of expressions |
+| NOT  | Returns TRUE if expression is not TRUE |
+
+```sql
+SELECT * FROM customers 
+WHERE City = 'New York' OR City = 'Chicago';
+```
