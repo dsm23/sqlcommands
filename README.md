@@ -20,6 +20,12 @@
 
 1.5 *[Arithmetic Operators](arithmetic-operators)*
 
+1.6 *[UPPER and LOWER](upper-and-lower)*
+
+1.7 *[ORDER BY](order-by)*
+
+1.8 *[LIKE](like)*
+
 ## Basics
 
 SQL stands for Structured Query Language
@@ -170,3 +176,24 @@ SELECT * FROM employees
 WHERE LastName LIKE '%s';
 ```
 
+#### MIN
+```sql
+SELECT MIN(Salary) AS Salary FROM employees;
+```
+
+#### Joining Tables
+selecting from two different tables will create a temporary table containing the two
+```sql
+SELECT customers.ID, customers.Name, orders.Name, orders.Amount
+FROM customers, orders
+WHERE customers.ID=orders.Customer_ID
+ORDER BY customers.ID;
+```
+
+Custom (shorter) table names can be achieved with AS
+```sql
+SELECT ct.ID, ct.Name, ord.Name, ord.Amount
+FROM customers AS ct, orders AS ord
+WHERE ct.ID=ord.Customer_ID
+ORDER BY ct.ID;
+```
