@@ -26,7 +26,7 @@ SQL stands for Structured Query Language
 
 SQL is used to access and manipulate a database
 
-MS SQLserver is a program that understands SQL
+MS SQL Server is a program that understands SQL
 
 SQL is not case sensitive
 
@@ -121,9 +121,52 @@ FROM customers;
 SELECT ID, FirstName, LastName, Salary+500 AS Salary
 FROM employees;
 ```
+```sql
+SELECT Salary, SQRT(Salary)
+FROM employees;
+```
+```sql
+SELECT AVG(Salary) FROM employees;
+```
+```sql
+SELECT SUM(Salary) FROM employees;
+```
 
-#### UPPER
+#### UPPER and LOWER
 ```sql
 SELECT FirstName, UPPER(LastName) AS LastName 
 FROM employees;
 ```
+
+The *UPPER* function converts all letters in the specified string to uppercase. 
+The *LOWER* function converts the string to lowercase.
+
+#### ORDER BY
+```sql
+SELECT FirstName, Salary FROM employees 
+WHERE  Salary > 3100
+ORDER BY Salary ASC;
+```
+The *DESC* keyword sorts results in descending order. 
+Similarly, *ASC* sorts the results in ascending order.
+
+example
+```sql
+SELECT FirstName, Salary FROM employees 
+WHERE  Salary > (SELECT AVG(Salary) FROM employees) 
+ORDER BY Salary DESC;
+```
+
+#### LIKE
+
+LIKE syntax
+```sql
+SELECT * FROM employees 
+WHERE FirstName LIKE 'A%';
+```
+or
+```sql
+SELECT * FROM employees 
+WHERE LastName LIKE '%s';
+```
+
