@@ -144,8 +144,8 @@ SELECT FirstName, UPPER(LastName) AS LastName
 FROM employees;
 ```
 
-The *UPPER* function converts all letters in the specified string to uppercase. 
-The *LOWER* function converts the string to lowercase.
+The **UPPER** function converts all letters in the specified string to uppercase. 
+The **LOWER** function converts the string to lowercase.
 
 #### ORDER BY
 ```sql
