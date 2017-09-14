@@ -39,7 +39,7 @@ FROM customers
 WHERE City = 'New York';
 ```
 
-##### Logical Operators
+#### Logical Operators
 
 | Operator  | Description |
 | ------------- | ------------- |
