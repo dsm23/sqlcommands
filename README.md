@@ -4,6 +4,8 @@
 
 ## Contents
 
+1. *[Basics](#basics)*
+
 1. *[Queries](#queries)*
 
 1.1 *[WHERE](#where)*
@@ -13,6 +15,28 @@
 1.3 *[Logical Operators](#logical-operators)*
 
 1.3.1 *[OR](#or)*
+
+1.4 *[CONCAT](#concat)*
+
+1.5 *[Arithmetic Operators](arithmetic-operators)*
+
+## Basics
+
+SQL stands for Structured Query Language
+
+SQL is used to access and manipulate a database
+
+MS SQLserver is a program that understands SQL
+
+SQL is not case sensitive
+
+SQL can:
+
+- insert, update, or delete records in a database
+
+- create new databases, table, stored procedures, views
+
+- retrieve data from a database, etc
 
 ## Queries
 
@@ -25,7 +49,7 @@ FROM table_name
 WHERE condition;
 ```
 
-numerical example
+numerical example (where customers is a generic table)
 ```sql
 SELECT * FROM customers
 WHERE ID != 5;
@@ -68,7 +92,7 @@ SELECT * FROM customers
 WHERE City = 'New York' OR City = 'Chicago';
 ```
 
-combining
+combine with AND
 ```sql
 SELECT * FROM customers
 WHERE City = 'New York'
@@ -81,7 +105,25 @@ SELECT * FROM customers
 WHERE City IN ('New York', 'Los Angeles', 'Chicago');
 ```
 
-#### Concat
+#### CONCAT
 ```sql
 SELECT CONCAT(FirstName, ', ' , City) FROM customers;
+```
+
+combine with AS
+```sql
+SELECT CONCAT(FirstName,', ', City) AS new_column 
+FROM customers;
+```
+
+#### Arithmetic Operators
+```sql
+SELECT ID, FirstName, LastName, Salary+500 AS Salary
+FROM employees;
+```
+
+#### UPPER
+```sql
+SELECT FirstName, UPPER(LastName) AS LastName 
+FROM employees;
 ```
