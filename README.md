@@ -8,9 +8,15 @@
 
 1.1 *[WHERE](#where)*
 
-## Queries
+1.2 *[BETWEEN](#between)*
 
-#### WHERE
+1.3 *[Logical Operators](#logical-operators)*
+
+1.3.1 *[OR](#or)*
+
+## 1. Queries
+
+#### 1.1 WHERE
 
 WHERE command syntax
 ```sql
@@ -24,6 +30,8 @@ numerical example
 SELECT * FROM customers
 WHERE ID != 5;
 ```
+
+#### 1.2 BETWEEN
 
 BETWEEN command syntax
 ```sql
@@ -45,7 +53,7 @@ FROM customers
 WHERE City = 'New York';
 ```
 
-#### Logical Operators
+#### 1.3 Logical Operators
 
 | Operator  | Description |
 | ------------- | ------------- |
@@ -54,7 +62,21 @@ WHERE City = 'New York';
 | IN  | TRUE if the operand is equal to one of a list of expressions |
 | NOT  | Returns TRUE if expression is not TRUE |
 
+#### 1.3.1 OR
 ```sql
 SELECT * FROM customers 
 WHERE City = 'New York' OR City = 'Chicago';
+```
+
+combining
+```sql
+SELECT * FROM customers
+WHERE City = 'New York'
+AND (Age=30 OR Age=35);
+```
+
+IN (Multiple OR)
+```sql
+SELECT * FROM customers 
+WHERE City IN ('New York', 'Los Angeles', 'Chicago');
 ```
