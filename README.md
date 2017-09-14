@@ -14,9 +14,9 @@
 
 1.3.1 *[OR](#or)*
 
-## 1. Queries
+## Queries
 
-#### 1.1 WHERE
+#### WHERE
 
 WHERE command syntax
 ```sql
@@ -31,7 +31,7 @@ SELECT * FROM customers
 WHERE ID != 5;
 ```
 
-#### 1.2 BETWEEN
+#### BETWEEN
 
 BETWEEN command syntax
 ```sql
@@ -53,7 +53,7 @@ FROM customers
 WHERE City = 'New York';
 ```
 
-#### 1.3 Logical Operators
+#### Logical Operators
 
 | Operator  | Description |
 | ------------- | ------------- |
@@ -62,7 +62,7 @@ WHERE City = 'New York';
 | IN  | TRUE if the operand is equal to one of a list of expressions |
 | NOT  | Returns TRUE if expression is not TRUE |
 
-#### 1.3.1 OR
+#### OR
 ```sql
 SELECT * FROM customers 
 WHERE City = 'New York' OR City = 'Chicago';
@@ -79,4 +79,9 @@ IN (Multiple OR)
 ```sql
 SELECT * FROM customers 
 WHERE City IN ('New York', 'Los Angeles', 'Chicago');
+```
+
+#### Concat
+```sql
+SELECT CONCAT(FirstName, ', ' , City) FROM customers;
 ```
