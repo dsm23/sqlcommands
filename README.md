@@ -4,27 +4,27 @@
 
 ## Contents
 
-1. *[Basics](#basics)*
+* [Basics](#basics)
 
-1. *[Queries](#queries)*
+* [Queries](#queries)
 
-1.1 *[WHERE](#where)*
+	* [WHERE](#where)
 
-1.2 *[BETWEEN](#between)*
+	* [BETWEEN](#between)
 
-1.3 *[Logical Operators](#logical-operators)*
+	* [Logical Operators](#logical-operators)
 
-1.3.1 *[OR](#or)*
+	* [OR](#or)
 
-1.4 *[CONCAT](#concat)*
+	* [CONCAT](#concat)
 
-1.5 *[Arithmetic Operators](arithmetic-operators)*
+	* [Arithmetic Operators](arithmetic-operators)
 
-1.6 *[UPPER and LOWER](upper-and-lower)*
+	* [UPPER and LOWER](upper-and-lower)
 
-1.7 *[ORDER BY](order-by)*
+	* [ORDER BY](order-by)
 
-1.8 *[LIKE](like)*
+	* [LIKE](like)
 
 ## Basics
 
