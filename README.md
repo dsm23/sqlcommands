@@ -246,9 +246,11 @@ SELECT FirstName, Salary FROM employees
 WHERE  Salary > 3100
 ORDER BY Salary ASC;
 ```
+
+Result:
+
 ID | FirstName |	LastName | City | Age | Salary
 :---:|:---:|:---:|:---:|:---:|:---:
-
 8 |	Charlotte | Walker | Chicago | 35 | 3500
 9 |	Samuel | Clark | San Diego | 20 | 4000
 4 |	Emily | Adams | Houston | 34 | 4500
@@ -294,6 +296,7 @@ SELECT * FROM employees
 WHERE LastName LIKE '%s';
 ```
 Result:
+
 ID | FirstName |	LastName | City | Age | Salary
 :---:|:---:|:---:|:---:|:---:|:---:
 2 |	David | Williams | Los Angeles | 23 | 1500
