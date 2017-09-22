@@ -212,6 +212,12 @@ FROM employees;
 ```sql
 SELECT AVG(Salary) FROM employees;
 ```
+Result:
+
+|AVG(Salary)|
+|:---:|
+|3100.0000|
+
 ```sql
 SELECT SUM(Salary) FROM employees;
 ```
