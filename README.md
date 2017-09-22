@@ -61,6 +61,20 @@ SELECT * FROM customers
 WHERE ID != 5;
 ```
 
+Result: 
+
+ID | FirstName |	LastName | City | Age | Salary
+:---:|:---:|:---:|:---:|:---:|:---:
+1 | John | Smith | New York | 35 | 2000
+2 |	David | Williams | Los Angeles | 23 | 1500
+3 |	Chloe | Anderson | Chicago | 27 | 3000
+4 |	Emily | Adams | Houston | 34 | 4500
+6 |	Andrew | Thomas	| New York | 45 | 2500
+7 |	Daniel | Harris	| New York | 30 | 3000
+8 |	Charlotte | Walker | Chicago | 35 | 3500
+9 |	Samuel | Clark | San Diego | 20 | 4000
+10 | Anthony | Young | Los Angeles | 33 | 5000
+
 #### BETWEEN
 
 BETWEEN command syntax
@@ -76,12 +90,31 @@ SELECT * FROM customers
 WHERE ID BETWEEN 3 AND 7;
 ```
 
+Result:
+
+ID | FirstName |	LastName | City | Age | Salary
+:---:|:---:|:---:|:---:|:---:|:---:
+3 |	Chloe | Anderson | Chicago | 27 | 3000
+4 |	Emily | Adams | Houston | 34 | 4500
+5 |	James | Roberts	| Philadelphia | 31 | 2000
+6 |	Andrew | Thomas	| New York | 45 | 2500
+7 |	Daniel | Harris	| New York | 30 | 3000
+
 text example
 ```sql
 SELECT ID, FirstName, LastName, City 
 FROM customers
 WHERE City = 'New York';
 ```
+
+Result:
+
+ID | FirstName |	LastName | City | Age | Salary
+:---:|:---:|:---:|:---:|:---:|:---:
+1 | John | Smith | New York | 35 | 2000
+6 |	Andrew | Thomas	| New York | 45 | 2500
+7 |	Daniel | Harris	| New York | 30 | 3000
+
 
 #### Logical Operators
 
@@ -98,6 +131,16 @@ SELECT * FROM customers
 WHERE City = 'New York' OR City = 'Chicago';
 ```
 
+Result:
+
+ID | FirstName |	LastName | City | Age | Salary
+:---:|:---:|:---:|:---:|:---:|:---:
+1 | John | Smith | New York | 35 | 2000
+3 |	Chloe | Anderson | Chicago | 27 | 3000
+6 |	Andrew | Thomas	| New York | 45 | 2500
+7 |	Daniel | Harris	| New York | 30 | 3000
+8 |	Charlotte | Walker | Chicago | 35 | 3500
+
 combine with AND
 ```sql
 SELECT * FROM customers
@@ -105,11 +148,30 @@ WHERE City = 'New York'
 AND (Age=30 OR Age=35);
 ```
 
+Result:
+
+ID | FirstName |	LastName | City | Age | Salary
+:---:|:---:|:---:|:---:|:---:|:---:
+1 | John | Smith | New York | 35 | 2000
+7 |	Daniel | Harris	| New York | 30 | 3000
+
 IN (Multiple OR)
 ```sql
 SELECT * FROM customers 
 WHERE City IN ('New York', 'Los Angeles', 'Chicago');
 ```
+
+Result:
+
+ID | FirstName |	LastName | City | Age | Salary
+:---:|:---:|:---:|:---:|:---:|:---:
+1 | John | Smith | New York | 35 | 2000
+2 |	David | Williams | Los Angeles | 23 | 1500
+3 |	Chloe | Anderson | Chicago | 27 | 3000
+6 |	Andrew | Thomas	| New York | 45 | 2500
+7 |	Daniel | Harris	| New York | 30 | 3000
+8 |	Charlotte | Walker | Chicago | 35 | 3500
+10 | Anthony | Young | Los Angeles | 33 | 5000
 
 #### CONCAT
 ```sql
@@ -127,6 +189,22 @@ FROM customers;
 SELECT ID, FirstName, LastName, Salary+500 AS Salary
 FROM employees;
 ```
+
+Result:
+
+ID | FirstName |	LastName | City | Age | Salary
+:---:|:---:|:---:|:---:|:---:|:---:
+1 | John | Smith | New York | 35 | 2500
+2 |	David | Williams | Los Angeles | 23 | 2000
+3 |	Chloe | Anderson | Chicago | 27 | 3500
+4 |	Emily | Adams | Houston | 34 | 5000
+5 |	James | Roberts	| Philadelphia | 31 | 2500
+6 |	Andrew | Thomas	| New York | 45 | 3000
+7 |	Daniel | Harris	| New York | 30 | 3500
+8 |	Charlotte | Walker | Chicago | 35 | 4000
+9 |	Samuel | Clark | San Diego | 20 | 4500
+10 | Anthony | Young | Los Angeles | 33 | 5500
+
 ```sql
 SELECT Salary, SQRT(Salary)
 FROM employees;
