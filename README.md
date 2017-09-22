@@ -222,6 +222,21 @@ SELECT FirstName, UPPER(LastName) AS LastName
 FROM employees;
 ```
 
+Result:
+
+ID | FirstName |	LastName | City | Age | Salary
+:---:|:---:|:---:|:---:|:---:|:---:
+1 | John | SMITH | New York | 35 | 2000
+2 |	David | WILLIAMS | Los Angeles | 23 | 1500
+3 |	Chloe | ANDERSON | Chicago | 27 | 3000
+4 |	Emily | ADAMS | Houston | 34 | 4500
+5 |	James | ROBERTS	| Philadelphia | 31 | 2000
+6 |	Andrew | THOMAS	| New York | 45 | 2500
+7 |	Daniel | HARRIS	| New York | 30 | 3000
+8 |	Charlotte | WALKER | Chicago | 35 | 3500
+9 |	Samuel | CLARK | San Diego | 20 | 4000
+10 | Anthony | YOUNG | Los Angeles | 33 | 5000
+
 The **UPPER** function converts all letters in the specified string to uppercase. 
 The **LOWER** function converts the string to lowercase.
 
@@ -231,6 +246,14 @@ SELECT FirstName, Salary FROM employees
 WHERE  Salary > 3100
 ORDER BY Salary ASC;
 ```
+ID | FirstName |	LastName | City | Age | Salary
+:---:|:---:|:---:|:---:|:---:|:---:
+
+8 |	Charlotte | Walker | Chicago | 35 | 3500
+9 |	Samuel | Clark | San Diego | 20 | 4000
+4 |	Emily | Adams | Houston | 34 | 4500
+10 | Anthony | Young | Los Angeles | 33 | 5000
+
 The **DESC** keyword sorts results in descending order. 
 Similarly, **ASC** sorts the results in ascending order.
 
@@ -241,6 +264,15 @@ WHERE  Salary > (SELECT AVG(Salary) FROM employees)
 ORDER BY Salary DESC;
 ```
 
+Result:
+
+ID | FirstName |	LastName | City | Age | Salary
+:---:|:---:|:---:|:---:|:---:|:---:
+8 |	Charlotte | Walker | Chicago | 35 | 3500
+9 |	Samuel | Clark | San Diego | 20 | 4000
+4 |	Emily | Adams | Houston | 34 | 4500
+10 | Anthony | Young | Los Angeles | 33 | 5000
+
 #### LIKE
 
 LIKE syntax
@@ -248,16 +280,37 @@ LIKE syntax
 SELECT * FROM employees 
 WHERE FirstName LIKE 'A%';
 ```
+Result:
+
+ID | FirstName |	LastName | City | Age | Salary
+:---:|:---:|:---:|:---:|:---:|:---:
+6 |	Andrew | Thomas	| New York | 45 | 2500
+10 | Anthony | Young | Los Angeles | 33 | 5000
+
 or
+
 ```sql
 SELECT * FROM employees 
 WHERE LastName LIKE '%s';
 ```
+Result:
+ID | FirstName |	LastName | City | Age | Salary
+:---:|:---:|:---:|:---:|:---:|:---:
+2 |	David | Williams | Los Angeles | 23 | 1500
+5 |	James | Roberts	| Philadelphia | 31 | 2000
+6 |	Andrew | Thomas	| New York | 45 | 2500
+7 |	Daniel | Harris	| New York | 30 | 3000
 
 #### MIN
 ```sql
 SELECT MIN(Salary) AS Salary FROM employees;
 ```
+Result:
+
+|Salary|
+|:---:|
+|1500|
+
 
 #### Joining Tables
 selecting from two different tables will create a temporary table containing the two
