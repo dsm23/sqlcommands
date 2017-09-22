@@ -46,6 +46,21 @@ SQL can:
 
 ## Queries
 
+for a given table called employees
+
+ID | FirstName |	LastName | City | Age | Salary
+:---:|:---:|:---:|:---:|:---:|:---:
+1 | John | Smith | New York | 35 | 2000
+2 |	David | Williams | Los Angeles | 23 | 1500
+3 |	Chloe | Anderson | Chicago | 27 | 3000
+4 |	Emily | Adams | Houston | 34 | 4500
+5 |	James | Roberts	| Philadelphia | 31 | 2000
+6 |	Andrew | Thomas	| New York | 45 | 2500
+7 |	Daniel | Harris	| New York | 30 | 3000
+8 |	Charlotte | Walker | Chicago | 35 | 3500
+9 |	Samuel | Clark | San Diego | 20 | 4000
+10 | Anthony | Young | Los Angeles | 33 | 5000
+
 #### WHERE
 
 WHERE command syntax
@@ -369,16 +384,3 @@ FROM employees AS ct, orders AS ord
 WHERE ct.ID=ord.Customer_ID
 ORDER BY ct.ID;
 ```
-
-ID | FirstName |	LastName | City | Age | Salary
-:---:|:---:|:---:|:---:|:---:|:---:
-1 | John | Smith | New York | 35 | 2000
-2 |	David | Williams | Los Angeles | 23 | 1500
-3 |	Chloe | Anderson | Chicago | 27 | 3000
-4 |	Emily | Adams | Houston | 34 | 4500
-5 |	James | Roberts	| Philadelphia | 31 | 2000
-6 |	Andrew | Thomas	| New York | 45 | 2500
-7 |	Daniel | Harris	| New York | 30 | 3000
-8 |	Charlotte | Walker | Chicago | 35 | 3500
-9 |	Samuel | Clark | San Diego | 20 | 4000
-10 | Anthony | Young | Los Angeles | 33 | 5000
