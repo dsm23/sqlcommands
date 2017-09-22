@@ -192,6 +192,7 @@ ID | FirstName | LastName | City | Age | Salary
 ```sql
 SELECT CONCAT(FirstName, ', ' , City) FROM employees;
 ```
+Result:
 
 | CONCAT(FirstName, ', ' , City) |
 |:---:|
