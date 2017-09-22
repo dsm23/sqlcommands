@@ -178,7 +178,7 @@ ID | FirstName | LastName | City | Age | Salary
 SELECT CONCAT(FirstName, ', ' , City) FROM employees;
 ```
 
-| FirstName, City |
+| CONCAT(FirstName, ', ' , City) |
 |:---:|
 |John, New York|
 |David, Los Angeles|
