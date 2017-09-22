@@ -55,9 +55,9 @@ FROM table_name
 WHERE condition;
 ```
 
-numerical example (where customers is a generic table)
+numerical example (where employees is a generic table)
 ```sql
-SELECT * FROM customers
+SELECT * FROM employees
 WHERE ID != 5;
 ```
 
@@ -86,13 +86,13 @@ WHERE column_name BETWEEN value1 AND value2;
 
 numerical example
 ```sql
-SELECT * FROM customers 
+SELECT * FROM employees 
 WHERE ID BETWEEN 3 AND 7;
 ```
 
 Result:
 
-ID | FirstName |	LastName | City | Age | Salary
+ID | FirstName | LastName | City | Age | Salary
 :---:|:---:|:---:|:---:|:---:|:---:
 3 |	Chloe | Anderson | Chicago | 27 | 3000
 4 |	Emily | Adams | Houston | 34 | 4500
@@ -103,17 +103,17 @@ ID | FirstName |	LastName | City | Age | Salary
 text example
 ```sql
 SELECT ID, FirstName, LastName, City 
-FROM customers
+FROM employees
 WHERE City = 'New York';
 ```
 
 Result:
 
-ID | FirstName |	LastName | City | Age | Salary
-:---:|:---:|:---:|:---:|:---:|:---:
-1 | John | Smith | New York | 35 | 2000
-6 |	Andrew | Thomas	| New York | 45 | 2500
-7 |	Daniel | Harris	| New York | 30 | 3000
+ID | FirstName | LastName | City
+:---:|:---:|:---:|:---:
+1 | John | Smith | New York
+6 |	Andrew | Thomas	| New York
+7 |	Daniel | Harris	| New York
 
 
 #### Logical Operators
@@ -127,13 +127,13 @@ ID | FirstName |	LastName | City | Age | Salary
 
 #### OR
 ```sql
-SELECT * FROM customers 
+SELECT * FROM employees 
 WHERE City = 'New York' OR City = 'Chicago';
 ```
 
 Result:
 
-ID | FirstName |	LastName | City | Age | Salary
+ID | FirstName | LastName | City | Age | Salary
 :---:|:---:|:---:|:---:|:---:|:---:
 1 | John | Smith | New York | 35 | 2000
 3 |	Chloe | Anderson | Chicago | 27 | 3000
@@ -143,27 +143,27 @@ ID | FirstName |	LastName | City | Age | Salary
 
 combine with AND
 ```sql
-SELECT * FROM customers
+SELECT * FROM employees
 WHERE City = 'New York'
 AND (Age=30 OR Age=35);
 ```
 
 Result:
 
-ID | FirstName |	LastName | City | Age | Salary
+ID | FirstName | LastName | City | Age | Salary
 :---:|:---:|:---:|:---:|:---:|:---:
 1 | John | Smith | New York | 35 | 2000
 7 |	Daniel | Harris	| New York | 30 | 3000
 
 IN (Multiple OR)
 ```sql
-SELECT * FROM customers 
+SELECT * FROM employees 
 WHERE City IN ('New York', 'Los Angeles', 'Chicago');
 ```
 
 Result:
 
-ID | FirstName |	LastName | City | Age | Salary
+ID | FirstName | LastName | City | Age | Salary
 :---:|:---:|:---:|:---:|:---:|:---:
 1 | John | Smith | New York | 35 | 2000
 2 |	David | Williams | Los Angeles | 23 | 1500
@@ -175,13 +175,26 @@ ID | FirstName |	LastName | City | Age | Salary
 
 #### CONCAT
 ```sql
-SELECT CONCAT(FirstName, ', ' , City) FROM customers;
+SELECT CONCAT(FirstName, ', ' , City) FROM employees;
 ```
+
+| FirstName, City |
+|:---:|
+|John, New York|
+|David, Los Angeles|
+|Chloe, Chicago|
+|Emily, Houston|
+|James, Philadelphia|
+|Andrew, New York|
+|Daniel, New York|
+|Charlotte, Chicago|
+|Samuel, San Diego|
+|Anthony, Los Angeles|
 
 combine with AS
 ```sql
 SELECT CONCAT(FirstName,', ', City) AS new_column 
-FROM customers;
+FROM employees;
 ```
 
 #### Arithmetic Operators
@@ -192,23 +205,38 @@ FROM employees;
 
 Result:
 
-ID | FirstName |	LastName | City | Age | Salary
-:---:|:---:|:---:|:---:|:---:|:---:
-1 | John | Smith | New York | 35 | 2500
-2 |	David | Williams | Los Angeles | 23 | 2000
-3 |	Chloe | Anderson | Chicago | 27 | 3500
-4 |	Emily | Adams | Houston | 34 | 5000
-5 |	James | Roberts	| Philadelphia | 31 | 2500
-6 |	Andrew | Thomas	| New York | 45 | 3000
-7 |	Daniel | Harris	| New York | 30 | 3500
-8 |	Charlotte | Walker | Chicago | 35 | 4000
-9 |	Samuel | Clark | San Diego | 20 | 4500
-10 | Anthony | Young | Los Angeles | 33 | 5500
+ID | FirstName | LastName | Salary
+:---:|:---:|:---:|:---:
+1 | John | Smith | 2500
+2 |	David | Williams | 2000
+3 |	Chloe | Anderson | 3500
+4 |	Emily | Adams | 5000
+5 |	James | Roberts | 2500
+6 |	Andrew | Thomas	| 3000
+7 |	Daniel | Harris	| 3500
+8 |	Charlotte | Walker | 4000
+9 |	Samuel | Clark | 4500
+10 | Anthony | Young | 5500
 
 ```sql
 SELECT Salary, SQRT(Salary)
 FROM employees;
 ```
+Result:
+
+Salary | SQRT(Salary)
+:---:|:---:
+2000 | 44.721359549995796
+1500 | 38.72983346207417
+3000 | 54.772255750516614
+4500 | 67.08203932499369
+2000 | 44.721359549995796
+2500 | 50
+3000 | 54.772255750516614
+3500 | 59.16079783099616
+4000 | 63.245553203367585
+5000 | 70.71067811865476
+
 ```sql
 SELECT AVG(Salary) FROM employees;
 ```
@@ -221,6 +249,11 @@ Result:
 ```sql
 SELECT SUM(Salary) FROM employees;
 ```
+Result:
+
+|SUM(Salary)|
+|:---:|
+|31000|
 
 #### UPPER and LOWER
 ```sql
@@ -230,18 +263,18 @@ FROM employees;
 
 Result:
 
-ID | FirstName |	LastName | City | Age | Salary
-:---:|:---:|:---:|:---:|:---:|:---:
-1 | John | SMITH | New York | 35 | 2000
-2 |	David | WILLIAMS | Los Angeles | 23 | 1500
-3 |	Chloe | ANDERSON | Chicago | 27 | 3000
-4 |	Emily | ADAMS | Houston | 34 | 4500
-5 |	James | ROBERTS	| Philadelphia | 31 | 2000
-6 |	Andrew | THOMAS	| New York | 45 | 2500
-7 |	Daniel | HARRIS	| New York | 30 | 3000
-8 |	Charlotte | WALKER | Chicago | 35 | 3500
-9 |	Samuel | CLARK | San Diego | 20 | 4000
-10 | Anthony | YOUNG | Los Angeles | 33 | 5000
+ID | FirstName | LastName 
+:---:|:---:|:---:
+1 | John | SMITH
+2 |	David | WILLIAMS
+3 |	Chloe | ANDERSON
+4 |	Emily | ADAMS
+5 |	James | ROBERTS
+6 |	Andrew | THOMAS
+7 |	Daniel | HARRIS
+8 |	Charlotte | WALKER
+9 |	Samuel | CLARK
+10 | Anthony | YOUNG
 
 The **UPPER** function converts all letters in the specified string to uppercase. 
 The **LOWER** function converts the string to lowercase.
@@ -252,11 +285,10 @@ SELECT FirstName, Salary FROM employees
 WHERE  Salary > 3100
 ORDER BY Salary ASC;
 ```
-
 Result:
 
-ID | FirstName |	LastName | City | Age | Salary
-:---:|:---:|:---:|:---:|:---:|:---:
+ID | FirstName | Salary
+:---:|:---:|:---:
 8 |	Charlotte | Walker | Chicago | 35 | 3500
 9 |	Samuel | Clark | San Diego | 20 | 4000
 4 |	Emily | Adams | Houston | 34 | 4500
@@ -274,12 +306,12 @@ ORDER BY Salary DESC;
 
 Result:
 
-ID | FirstName |	LastName | City | Age | Salary
-:---:|:---:|:---:|:---:|:---:|:---:
-8 |	Charlotte | Walker | Chicago | 35 | 3500
-9 |	Samuel | Clark | San Diego | 20 | 4000
-4 |	Emily | Adams | Houston | 34 | 4500
-10 | Anthony | Young | Los Angeles | 33 | 5000
+FirstName | Salary
+:---:|:---:
+Charlotte | 3500
+Samuel | 4000
+Emily | 4500
+Anthony | 5000
 
 #### LIKE
 
@@ -290,7 +322,7 @@ WHERE FirstName LIKE 'A%';
 ```
 Result:
 
-ID | FirstName |	LastName | City | Age | Salary
+ID | FirstName | LastName | City | Age | Salary
 :---:|:---:|:---:|:---:|:---:|:---:
 6 |	Andrew | Thomas	| New York | 45 | 2500
 10 | Anthony | Young | Los Angeles | 33 | 5000
@@ -303,7 +335,7 @@ WHERE LastName LIKE '%s';
 ```
 Result:
 
-ID | FirstName |	LastName | City | Age | Salary
+ID | FirstName | LastName | City | Age | Salary
 :---:|:---:|:---:|:---:|:---:|:---:
 2 |	David | Williams | Los Angeles | 23 | 1500
 5 |	James | Roberts	| Philadelphia | 31 | 2000
@@ -324,16 +356,16 @@ Result:
 #### Joining Tables
 selecting from two different tables will create a temporary table containing the two
 ```sql
-SELECT customers.ID, customers.Name, orders.Name, orders.Amount
-FROM customers, orders
-WHERE customers.ID=orders.Customer_ID
-ORDER BY customers.ID;
+SELECT employees.ID, employees.Name, orders.Name, orders.Amount
+FROM employees, orders
+WHERE employees.ID=orders.Customer_ID
+ORDER BY employees.ID;
 ```
 
 Custom (shorter) table names can be achieved with AS
 ```sql
 SELECT ct.ID, ct.Name, ord.Name, ord.Amount
-FROM customers AS ct, orders AS ord
+FROM employees AS ct, orders AS ord
 WHERE ct.ID=ord.Customer_ID
 ORDER BY ct.ID;
 ```
