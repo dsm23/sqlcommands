@@ -277,6 +277,7 @@ Result:
 SELECT COUNT (Salary)
 FROM employees;
 ```
+Result:
 
 | COUNT(Salary) |
 |:---:|
