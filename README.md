@@ -271,6 +271,17 @@ Result:
 |:---:|
 |31000|
 
+#### COUNT
+
+```sql
+SELECT COUNT (Salary)
+FROM employees;
+```
+
+| COUNT(Salary) |
+|:---:|
+| 10 |
+
 #### UPPER and LOWER
 ```sql
 SELECT FirstName, UPPER(LastName) AS LastName 
