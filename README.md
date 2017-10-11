@@ -410,12 +410,7 @@ FROM table1 INNER JOIN table2
 ON table1.column_name=table2.column_name;
 ```
 
-![alt text](innerjoin.png "Logo Title Text 1")
-
-![alt text][logo]
-
-[logo]: innerjoin.png "Logo Title Text 2"
-
+![INNER JOIN](innerjoin.png "INNER JOIN")
 
 #### LEFT JOIN
 ```sql
