@@ -412,6 +412,8 @@ ON table1.column_name=table2.column_name;
 
 ![alt text](innerjoin.png "Logo Title Text 1")
 
+[logo]: innerjoin.png "Logo Title Text 2"
+
 
 #### LEFT JOIN
 ```sql
