@@ -410,8 +410,6 @@ FROM table1 INNER JOIN table2
 ON table1.column_name=table2.column_name;
 ```
 
-<img src="innerjoin.png" alt="Inner Join" title="INNER JOIN" style="width:100%;">
-
 ![INNER JOIN](innerjoin.png "INNER JOIN")
 
 #### LEFT JOIN
@@ -422,7 +420,7 @@ ON table1.column_name = table2.column_name;
 ```
 The OUTER keyword is optional, and can be omitted.
 
-
+![LEFT JOIN](leftjoin.png "LEFT JOIN")
 
 #### RIGHT JOIN
 
@@ -431,6 +429,8 @@ SELECT table1.column1, table2.column2...
 FROM table1 RIGHT OUTER JOIN table2
 ON table1.column_name = table2.column_name;
 ```
+
+![RIGHT JOIN](rightjoin.png "RIGHT JOIN")
 
 #### UNION
 
