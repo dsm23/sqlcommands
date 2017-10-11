@@ -18,13 +18,15 @@
 
 	* [CONCAT](#concat)
 
-	* [Arithmetic Operators](arithmetic-operators)
+	* [Arithmetic Operators](#arithmetic-operators)
 
-	* [UPPER and LOWER](upper-and-lower)
+	* [UPPER and LOWER](#upper-and-lower)
 
-	* [ORDER BY](order-by)
+	* [ORDER BY](#order-by)
 
-	* [LIKE](like)
+	* [LIKE](#like)
+	
+* [Join](#join)
 
 ## Basics
 
@@ -381,6 +383,8 @@ Result:
 |1500|
 
 
+## Join
+
 #### Joining Tables
 selecting from two different tables will create a temporary table containing the two
 ```sql
@@ -396,4 +400,45 @@ SELECT ct.ID, ct.Name, ord.Name, ord.Amount
 FROM employees AS ct, orders AS ord
 WHERE ct.ID=ord.Customer_ID
 ORDER BY ct.ID;
+```
+
+#### INNER JOIN
+
+```sql
+SELECT column_name(s)
+FROM table1 INNER JOIN table2 
+ON table1.column_name=table2.column_name;
+```
+
+![alt text](innerjoin.png "Logo Title Text 1")
+
+
+#### LEFT JOIN
+```sql
+SELECT table1.column1, table2.column2...
+FROM table1 LEFT OUTER JOIN table2
+ON table1.column_name = table2.column_name;
+```
+The OUTER keyword is optional, and can be omitted.
+
+
+
+#### RIGHT JOIN
+
+```sql
+SELECT table1.column1, table2.column2...
+FROM table1 RIGHT OUTER JOIN table2
+ON table1.column_name = table2.column_name;
+```
+
+#### UNION
+
+```sql
+SELECT column_name(s) FROM table1,
+UNION,
+SELECT column_name(s) FROM table2;
+
+SELECT ID, FirstName, LastName, City FROM First
+UNION ALL
+SELECT ID, FirstName, LastName, City FROM Second;
 ```
