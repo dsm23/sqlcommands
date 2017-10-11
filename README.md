@@ -1,9 +1,3 @@
-<style>
-img {
-	width:100%;
-}
-</style>
-
 # SQL Query commands
 
 #### by David Murdoch
@@ -416,6 +410,8 @@ FROM table1 INNER JOIN table2
 ON table1.column_name=table2.column_name;
 ```
 
+<img src="innerjoin.png" alt="Inner Join" title="INNER JOIN" style="width:100%;">
+
 ![INNER JOIN](innerjoin.png "INNER JOIN")
 
 #### LEFT JOIN
@@ -439,8 +435,8 @@ ON table1.column_name = table2.column_name;
 #### UNION
 
 ```sql
-SELECT column_name(s) FROM table1,
-UNION,
+SELECT column_name(s) FROM table1
+UNION
 SELECT column_name(s) FROM table2;
 
 SELECT ID, FirstName, LastName, City FROM First
