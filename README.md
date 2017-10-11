@@ -1,3 +1,9 @@
+<style>
+img {
+	width:100%;
+}
+</style>
+
 # SQL Query commands
 
 #### by David Murdoch
