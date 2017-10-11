@@ -28,6 +28,16 @@
 	
 * [Join](#join)
 
+	* [INNER JOIN](#inner-join)
+	
+	* [LEFT JOIN](#left-join)
+	
+	*[RIGHT JOIN](#right-join)
+	
+	*[UNION](#union)
+	
+	*[FULL OUTER JOIN](#full-outer-join)
+
 ## Basics
 
 SQL stands for Structured Query Language
@@ -417,6 +427,11 @@ ON table1.column_name=table2.column_name;
 SELECT table1.column1, table2.column2...
 FROM table1 LEFT OUTER JOIN table2
 ON table1.column_name = table2.column_name;
+
+SELECT table1.column1, table2.column2...
+FROM table1 LEFT OUTER JOIN table2
+ON table1.column_name = table2.column_name
+WHERE table2.column.name IS NULL;
 ```
 The OUTER keyword is optional, and can be omitted.
 
@@ -432,6 +447,14 @@ ON table1.column_name = table2.column_name;
 
 ![RIGHT JOIN](rightjoin.png "RIGHT JOIN")
 
+#### FULL OUTER JOIN
+
+```sql
+SELECT table1.column1, table2.column2...
+FROM table1 FULL OUTER JOIN table2
+ON table1.column_name = table2.column_name;
+```
+
 #### UNION
 
 ```sql
@@ -443,3 +466,6 @@ SELECT ID, FirstName, LastName, City FROM First
 UNION ALL
 SELECT ID, FirstName, LastName, City FROM Second;
 ```
+
+
+https://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins
