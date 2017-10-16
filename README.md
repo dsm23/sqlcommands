@@ -58,6 +58,14 @@ SQL can:
 
 - retrieve data from a database, etc
 
+##### Comments
+```sql
+/*
+	This is a
+	comment!
+*/
+```
+
 ## Queries
 
 for a given table called employees
