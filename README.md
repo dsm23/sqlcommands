@@ -37,6 +37,8 @@
 	* [UNION](#union)
 	
 	* [FULL OUTER JOIN](#full-outer-join)
+	
+	* [Key](#key)
 
 ## Basics
 
@@ -465,6 +467,15 @@ SELECT column_name(s) FROM table2;
 SELECT ID, FirstName, LastName, City FROM First
 UNION ALL
 SELECT ID, FirstName, LastName, City FROM Second;
+```
+
+#### Key
+e.g.
+```sql
+SELECT <select_list> 
+FROM Table_A A
+INNER JOIN Table_B B
+ON A.Key = B.Key
 ```
 
 
