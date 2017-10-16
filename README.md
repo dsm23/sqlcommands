@@ -32,11 +32,11 @@
 	
 	* [LEFT JOIN](#left-join)
 	
-	*[RIGHT JOIN](#right-join)
+	* [RIGHT JOIN](#right-join)
 	
-	*[UNION](#union)
+	* [UNION](#union)
 	
-	*[FULL OUTER JOIN](#full-outer-join)
+	* [FULL OUTER JOIN](#full-outer-join)
 
 ## Basics
 
